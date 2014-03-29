@@ -23,9 +23,9 @@ def to_geocode_addresses(named_getters, data_items):
         getters["state_getter"],
         getters["zip_parts_getter"]
     )
-    get_voter_id = getters["voter_id"]
+    get_id = getters["id"]
 
-    results = (list(chain((get_voter_id(item),),
+    results = (list(chain((get_id(item),),
                           get_full_address_for_geocode(item)))
                for item in data_items)
     header = getters.get("geocode_header")
